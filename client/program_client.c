@@ -15,13 +15,13 @@ int main() {
     int sockfd,i=0;
     char buffer[MAXLINE];
     char data[50];
-    char *clear[50];
+    char *clear;
     
     
     while((data[i++] = getchar()) != '\n');
     struct sockaddr_in servaddr;
     clear = strtok(data,"\n");
-    printf(clear);
+    
   
     
     if ( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) {

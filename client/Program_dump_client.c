@@ -52,18 +52,23 @@ int main() {
     char msg1[MAXLINE],msg2[MAXLINE],temp[MAXLINE];
 
     strncpy(temp,buffer,sizeof(buffer));
-
+	
     char *msg = strtok(buffer," ");
 	strncpy(msg1,buffer,sizeof(buffer));
     msg = strtok(NULL," ");
     strncpy(msg2,msg,sizeof(buffer));
-
+	char msg3[50]; 
     msg = strtok(NULL," ");
+	strncpy(msg3,msg,sizeof(buffer));
     if(strcmp(msg1,"CREATE")==0){
         if(strcmp(msg2,"TABLE" )==0){
 			printf("Client : %s\n", temp);
             createTable(msg);
-        }
+        } else if(strcmp(msg2, "DATABASE")==0){
+		//ini mkdir nya belom keluar/bisa	
+			mkdir(msg3, 0777);
+			printf(msg3);
+		}
     }
 
 	return 0;
