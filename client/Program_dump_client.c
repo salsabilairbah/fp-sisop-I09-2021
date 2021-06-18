@@ -65,7 +65,7 @@ int main() {
 			printf("Client : %s\n", temp);
             createTable(msg);
         } else if(strcmp(msg2, "DATABASE")==0){
-		//ini mkdir nya belom keluar/bisa	
+		//ini mkdir nya ada di folder client
 			mkdir(msg3, 0777);
 			printf(msg3);
 		}
